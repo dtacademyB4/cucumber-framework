@@ -14,6 +14,9 @@ public class SearchPage {
     @FindBy(xpath= "(//a[@title='Blouse'])[2]")
     public WebElement searchResult;
 
+    @FindBy(xpath= "(//a[@title='Faded Short Sleeve T-shirts'])[2]")
+    public WebElement searchResult2;
+
     @FindBy(xpath= "//p[@class='alert alert-warning']")
     public WebElement errorMessage;
 
