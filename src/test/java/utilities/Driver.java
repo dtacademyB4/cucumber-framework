@@ -20,13 +20,13 @@ public class Driver {
 
     }
 
-    public static WebDriver getDriver(String browser) {
+    public static WebDriver getDriver() {
 
         if (driver == null) {
 
-           if(browser == null){
-               browser = ConfigReader.getProperty("browser");
-           }
+
+            String  browser = ConfigReader.getProperty("browser");
+
 
 
             switch (browser) {
@@ -84,9 +84,7 @@ public class Driver {
     }
 
 
-    public static WebDriver getDriver() {
-        return getDriver(null);
-    }
+
 
 
     public static void quitDriver() {
