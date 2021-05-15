@@ -28,7 +28,6 @@ public class SearchStepDefs {
 
 
 
-
     @When("The user enters a term {string} to the search bar")
     public void the_user_enters_a_term_to_the_search_bar(String product) {
         HomePage homePage = new HomePage();
@@ -44,9 +43,6 @@ public class SearchStepDefs {
 
 
 
-
-
-
     @Then("The error message should be displayed.")
     public void the_error_message_should_be_displayed() {
 
@@ -56,7 +52,6 @@ public class SearchStepDefs {
         String expected = "No results were found for your search";
         Assert.assertTrue(actual.contains(expected));
     }
-
 
 
     @Then("The search result should contain the term Faded Short Sleeve T-shirts")

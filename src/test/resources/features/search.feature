@@ -23,7 +23,8 @@ Background:
     When The user enters a term "sdhgfgsjjsdfg" to the search bar
     Then The error message should be displayed.
 
-      @temp
+
   Scenario: Search for a product using search bar
     When The user enters a term "Faded Short Sleeve T-shirts" to the search bar
     Then The search result should contain the term Faded Short Sleeve T-shirts
+        Then Whatever
