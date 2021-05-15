@@ -7,9 +7,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class HomePage {
     @FindBy(id = "search_query_top")
     public WebElement searchBar;
+
+    @FindBy(xpath = "//ul[@id='homefeatured']//a[@class='product-name']")
+    public List<WebElement> actualListOfWebelements;
+
 
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(),this);

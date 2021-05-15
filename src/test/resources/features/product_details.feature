@@ -1,4 +1,4 @@
-@temp
+
 Feature: Validate product details
 
 
