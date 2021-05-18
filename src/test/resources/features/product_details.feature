@@ -24,3 +24,12 @@ Feature: Validate product details
     Then The user should be taken to product details page with title "Printed Chiffon Dress"
     And The price of the product should be 16.40
     And The default quantity should be 2
+
+
+  @temp
+    Scenario: Verify Product details
+      Given The user is on the homepage
+      When The user clicks on a product "Faded Short Sleeve T-shirts"
+      Then The product details should be the following
+        | Name                        | Condition| Composition  | Style | Price | Size |
+        | Faded Short Sleeve T-shirts | New      |  Cotton      | Casual| 16.51 | S    |

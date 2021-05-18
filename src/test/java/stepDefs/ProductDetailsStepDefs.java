@@ -8,6 +8,8 @@ import pages.ProductDetailsPage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
 
+import java.util.List;
+
 public class ProductDetailsStepDefs {
 
 
@@ -35,6 +37,25 @@ public class ProductDetailsStepDefs {
         ProductDetailsPage pd = new ProductDetailsPage();
        String actual = pd.defaultQuantity.getAttribute("value"); // make it fail
        Assert.assertEquals(quantity, Integer.valueOf(actual));
+    }
+
+
+    @Then("The product details should be the following")
+    public void the_product_details_should_be_the_following(List<List<String>> dataTable) {
+
+           ProductDetailsPage productDetailsPage = new ProductDetailsPage();
+
+        List<String> products = dataTable.get(1);
+
+        Assert.assertEquals(products.get(0), productDetailsPage.productName.getText());
+        Assert.assertEquals(products.get(1), productDetailsPage.condition.getText());
+        Assert.assertEquals(products.get(2), productDetailsPage.composition.getText());
+        Assert.assertEquals(products.get(3), productDetailsPage.style.getText());
+        Assert.assertEquals(products.get(4), productDetailsPage.price.getText().replace("$", ""));
+        Assert.assertEquals(products.get(5), productDetailsPage.getFirstSelectedOption());
+
+
+
     }
 
 }
