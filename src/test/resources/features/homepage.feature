@@ -14,3 +14,22 @@ Feature: Verify Home page details
 #    Cucumber DataTable is used to pass multiple set of data into a SINGLE step
 
 
+
+  Scenario Outline: Verify page titles
+    Given The user is on the homepage
+    When The user clicks on "<link>"
+    Then The title should be "<link>"
+
+    Examples:
+      | link     |
+      | Women    |
+      | Dresses  |
+      | T-shirts |
+      | Women    |
+      | Dresses  |
+      | T-shirts |
+      | Women    |
+      | Dresses  |
+      | T-shirts |
+
+

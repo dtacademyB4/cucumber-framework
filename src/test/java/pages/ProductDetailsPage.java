@@ -20,10 +20,10 @@ public class ProductDetailsPage {
     @FindBy(xpath = "//p[@id='product_condition']//span[@class='editable']")
     public WebElement condition;
 
-    @FindBy(xpath = "//td[.='Cotton']")
+    @FindBy(xpath = "//tr[@class='odd']//td[2]")
     public WebElement composition;
 
-    @FindBy(xpath = "//td[.='Casual']")
+    @FindBy(xpath = "//tr[@class='even']//td[2]")
     public WebElement style;
 
     @FindBy(id = "group_1")

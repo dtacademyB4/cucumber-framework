@@ -26,10 +26,36 @@ Feature: Validate product details
     And The default quantity should be 2
 
 
-  @temp
+
     Scenario: Verify Product details
       Given The user is on the homepage
       When The user clicks on a product "Faded Short Sleeve T-shirts"
       Then The product details should be the following
         | Name                        | Condition| Composition  | Style | Price | Size |
         | Faded Short Sleeve T-shirts | New      |  Cotton      | Casual| 16.51 | S    |
+
+
+
+  Scenario: Verify Product details using
+    Given The user is on the homepage
+    When The user clicks on a product "Blouse"
+    Then The product details should be the following using
+      | Name   | Condition | Composition | Style       | Price   | Size |
+      | Blouse | New       | Cotton      | Casual      | 27.00   | S    |
+
+  @temp
+  Scenario Outline: Verify Product details using
+    Given The user is on the homepage
+    When The user clicks on a product "<productName>"
+    Then The product details should be the following using
+      | Name          | Condition | Composition | Style   | Price   | Size   |
+      | <productName> | <cond>    | <material>  | <style> | <price> | <size> |
+
+    Examples:
+
+      | productName                 | cond | material  | style  | price | size |
+      | Faded Short Sleeve T-shirts | New  | Cotton    | Casual | 16.51 | S    |
+      | Blouse                      | New  | Cotton    | Casual | 27.00 | S    |
+      | Printed Dress               | New  | Cotton    | Girly  | 26.00 | S    |
+      | Printed Summer Dress        | New  | Viscose   | Casual | 28.98 | S    |
+      | Printed Chiffon Dress       | New  | Polyester | Girly  | 16.40 | S    |

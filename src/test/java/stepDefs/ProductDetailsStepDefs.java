@@ -9,6 +9,7 @@ import utilities.BrowserUtilities;
 import utilities.Driver;
 
 import java.util.List;
+import java.util.Map;
 
 public class ProductDetailsStepDefs {
 
@@ -57,5 +58,25 @@ public class ProductDetailsStepDefs {
 
 
     }
+
+
+
+    @Then("The product details should be the following using")
+    public void the_product_details_should_be_the_following_using(List<Map<String,String>> dataTable) {
+        ProductDetailsPage productDetailsPage = new ProductDetailsPage();
+        Map<String, String> firstRow = dataTable.get(0);
+
+
+
+        Assert.assertEquals(firstRow.get("Name"), productDetailsPage.productName.getText());
+        Assert.assertEquals(firstRow.get("Price"), productDetailsPage.price.getText().replace("$", ""));
+        Assert.assertEquals(firstRow.get("Style"), productDetailsPage.style.getText());
+        Assert.assertEquals(firstRow.get("Composition"), productDetailsPage.composition.getText());
+        Assert.assertEquals(firstRow.get("Size"), productDetailsPage.getFirstSelectedOption());
+        Assert.assertEquals(firstRow.get("Condition"), productDetailsPage.condition.getText());
+
+
+    }
+
 
 }

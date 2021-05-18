@@ -1,6 +1,7 @@
 package stepDefs;
 
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.HomePage;
 import utilities.BrowserUtilities;
@@ -42,5 +43,23 @@ public class HomePageStepDefs {
     public void the_page_title_should_be(String title) {
         Assert.assertTrue(Driver.getDriver().getTitle().contains(title));
     }
+
+
+
+    @When("The user clicks on {string}")
+    public void the_user_clicks_on(String link) {
+          HomePage homePage = new HomePage();
+          homePage.clickOnLink(link);
+    }
+
+    @Then("The title should be {string}")
+    public void the_title_should_be(String title) {
+
+       Assert.assertTrue(Driver.getDriver().getTitle().contains(title));
+    }
+
+
+
+
 
 }
