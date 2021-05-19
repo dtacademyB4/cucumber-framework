@@ -43,7 +43,7 @@ Feature: Validate product details
       | Name   | Condition | Composition | Style       | Price   | Size |
       | Blouse | New       | Cotton      | Casual      | 27.00   | S    |
 
-  @temp
+
   Scenario Outline: Verify Product details using
     Given The user is on the homepage
     When The user clicks on a product "<productName>"

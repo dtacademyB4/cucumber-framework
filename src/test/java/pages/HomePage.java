@@ -18,6 +18,13 @@ public class HomePage {
     public List<WebElement> actualListOfWebelements;
 
 
+    @FindBy(partialLinkText = "Sign in")
+    public WebElement signInLink;
+
+
+
+
+
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
