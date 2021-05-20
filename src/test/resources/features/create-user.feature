@@ -21,7 +21,7 @@ Feature: Verify User Creation
     Then The user should land on My Account page
     And The name should be correct
 
-@temp
+
   Scenario Outline: Verify user registration using scenario outline
     Given The user is on the homepage
     When The user navigates to Login page
@@ -40,6 +40,17 @@ Feature: Verify User Creation
 | Kliment    | Huxtable   | Z7NvpJ7oB1  | 2546 Oriole Center  | Pittsburgh     | Pennsylvania | 15215    | 412-529-9524 |
 | Kerianne   | Doddemeede | rV7NBj      | 3557 Iowa Center    | Mobile         | Alabama      | 36616    | 251-839-5757 |
 | Robena     | Dodshon    | qUqCn6      | 63 Nova Drive       | Elmira         | New York     | 14905    | 607-341-1537 |
+
+
+
+
+  @temp
+  Scenario: Verify user registration using external excel file
+    Given The user is on the homepage
+    When The user navigates to Login page
+    And The user passes the information and the name should be correct
+
+
 
 
     

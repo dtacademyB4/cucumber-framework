@@ -15,4 +15,11 @@ public class MyAccountPage {
     @FindBy(xpath = "//a[@title='View my customer account']//span")
     public WebElement fullName;
 
+    @FindBy(partialLinkText = "Sign out")
+    public WebElement signOutLink;
+
+
+
+
+
 }

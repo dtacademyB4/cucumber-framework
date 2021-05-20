@@ -9,6 +9,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.MyAccountPage;
 import utilities.Driver;
+import utilities.ExcelUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -102,4 +103,58 @@ public class UserRegistrationStepDefs {
         createAccountPage.registerButton.click();
 
     }
+
+
+    @When("The user passes the information and the name should be correct")
+    public void the_user_passes_the_information_and_the_name_should_be_correct() throws InterruptedException {
+
+        ExcelUtils file = new ExcelUtils("testData.xlsx", "Sheet2");
+
+        List<Map<String, String>> listOfMaps = file.getDataAsMap();
+
+
+        for (int i = 0; i < listOfMaps.size() ; i++) {
+            LoginPage loginPage = new LoginPage();
+            loginPage.emailInputBox.sendKeys(new Faker().internet().emailAddress());
+            loginPage.createAccountButton.click();
+
+
+
+            Map<String, String> map = listOfMaps.get(i);
+
+            CreateAccountPage createAccountPage = new CreateAccountPage();
+
+            createAccountPage.firstName.sendKeys(map.get("first_name"));
+            createAccountPage.lastName.sendKeys(map.get("last_name"));
+            createAccountPage.password.sendKeys(map.get("password"));
+            createAccountPage.chooseDob();
+
+            createAccountPage.address.sendKeys(map.get("Street Address"));
+            createAccountPage.city.sendKeys(map.get("City"));
+            createAccountPage.chooseState(map.get("State"));
+
+            createAccountPage.zipcode.sendKeys(map.get("Zip Code").replace(".0", ""));
+            createAccountPage.phone.sendKeys(map.get("Phone"));
+
+            createAccountPage.registerButton.click();
+
+
+            Assert.assertTrue( Driver.getDriver().getTitle().contains("My account"));
+
+            new MyAccountPage().signOutLink.click();
+
+            Thread.sleep(500);
+
+
+
+
+        }
+
+
+    }
+
+
+
+
+
 }
