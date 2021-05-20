@@ -64,5 +64,10 @@ public class CreateAccountPage {
 
     }
 
+    public void chooseState(String state){
+        new Select(Driver.getDriver().findElement(By.id("id_state"))).selectByVisibleText(state);
+
+    }
+
 
 }

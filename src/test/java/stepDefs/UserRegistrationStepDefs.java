@@ -10,6 +10,9 @@ import pages.LoginPage;
 import pages.MyAccountPage;
 import utilities.Driver;
 
+import java.util.List;
+import java.util.Map;
+
 public class UserRegistrationStepDefs {
 
     String first;
@@ -53,6 +56,8 @@ public class UserRegistrationStepDefs {
 
 
 
+
+
     }
 
     @Then("The user should land on My Account page")
@@ -69,5 +74,32 @@ public class UserRegistrationStepDefs {
         String expectedName = first +" "+ last;
 
         Assert.assertEquals(expectedName, actualName);
+    }
+
+
+    @When("The user passes the following info and clicks on register")
+    public void the_user_passes_the_following_info_and_clicks_on_register(List<Map<String,String>> dataTable) throws InterruptedException {
+
+        CreateAccountPage createAccountPage = new CreateAccountPage();
+
+        Map<String, String> userInfo = dataTable.get(0);
+        first =userInfo.get("first_name");
+        createAccountPage.firstName.sendKeys(first);
+        last = userInfo.get("last_name");
+        createAccountPage.lastName.sendKeys(last);
+         ;
+        createAccountPage.password.sendKeys(userInfo.get("password"));
+        createAccountPage.chooseDob();
+        createAccountPage.address.sendKeys(userInfo.get("Street Address"));
+        createAccountPage.city.sendKeys(userInfo.get("City"));
+        createAccountPage.chooseState(userInfo.get("State"));
+        createAccountPage.zipcode.sendKeys(userInfo.get("Zip Code"));
+        createAccountPage.phone.sendKeys(userInfo.get("Phone"));
+
+
+
+
+        createAccountPage.registerButton.click();
+
     }
 }
