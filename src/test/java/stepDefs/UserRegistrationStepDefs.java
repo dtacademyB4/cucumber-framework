@@ -143,7 +143,7 @@ public class UserRegistrationStepDefs {
 
             new MyAccountPage().signOutLink.click();
 
-            Thread.sleep(500);
+
 
 
 

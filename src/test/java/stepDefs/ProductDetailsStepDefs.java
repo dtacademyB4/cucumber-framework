@@ -7,9 +7,12 @@ import pages.HomePage;
 import pages.ProductDetailsPage;
 import utilities.BrowserUtilities;
 import utilities.Driver;
+import utilities.ExcelUtils;
 
 import java.util.List;
 import java.util.Map;
+
+import static  org.junit.Assert.*;
 
 public class ProductDetailsStepDefs {
 
@@ -75,6 +78,81 @@ public class ProductDetailsStepDefs {
         Assert.assertEquals(firstRow.get("Size"), productDetailsPage.getFirstSelectedOption());
         Assert.assertEquals(firstRow.get("Condition"), productDetailsPage.condition.getText());
 
+
+    }
+
+
+    @Then("The product details should match the info in an excel file {string} and sheet {string}")
+    public void the_product_details_should_match_the_info_in_an_excel_file_and_sheet(String file, String sheet) throws Throwable {
+
+        boolean exceptionThrown = false;
+        Throwable e = null;
+
+        ExcelUtils excelUtils = new ExcelUtils(file, sheet);
+
+        List<Map<String, String>> dataAsMap = excelUtils.getDataAsMap();
+
+        System.out.println(dataAsMap);
+
+        // Go through the list of maps
+        for (int i = 0; i < dataAsMap.size(); i++) {
+
+            Map<String, String> eachRow = dataAsMap.get(i);
+            // If the Execute is equal to Y:
+            if(eachRow.get("Execute").equalsIgnoreCase("Y")){
+                // Getting the expected data from excel file
+                String expectedProductName = eachRow.get("Products");
+                String expectedPrice = eachRow.get("Price");
+                String expectedModel= eachRow.get("Model");
+                String expectedComposition = eachRow.get("Composition");
+                String expectedStyle = eachRow.get("Styles");
+
+                // Getting the actual data from UI
+                HomePage homePage = new HomePage();
+                homePage.clickOnProduct(expectedProductName);
+                ProductDetailsPage pd = new ProductDetailsPage();
+                String actualProductName = pd.productName.getText();
+                String  actualPrice = pd.price.getText();
+                String  actualModel= pd.model.getText();
+                String  actualComposition =pd.composition.getText();
+                String  actualStyle = pd.style.getText();
+
+                // Assert the actual info from UI with the expected info from dataAsMap
+                try {
+                    assertEquals(expectedProductName, actualProductName);
+                    assertEquals(expectedPrice, actualPrice);
+                    assertEquals(expectedModel, actualModel);
+                    assertEquals(expectedComposition, actualComposition);
+                    assertEquals(expectedStyle, actualStyle);
+
+                    excelUtils.setCellData("PASS", "Status", i + 1);
+                }catch(Throwable ex){
+                    e = ex;
+                    exceptionThrown = true;
+                    e.printStackTrace();
+                    excelUtils.setCellData("FAIL", "Status", i + 1);
+
+                }
+                // Write PASS or FAIL back to the excel file
+
+
+                Driver.getDriver().navigate().back();
+            }else{
+                excelUtils.setCellData("SKIP", "Status", i+1);
+            }
+
+
+        }
+
+
+
+
+
+            // If the Execute is equal to N:
+            // Write SKIP back to the excel file
+       if(exceptionThrown){   // Manual creation of softAssert
+           throw  e;
+       }
 
     }
 

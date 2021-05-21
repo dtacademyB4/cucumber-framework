@@ -36,7 +36,7 @@ Feature: Validate product details
 
 
 
-  Scenario: Verify Product details using
+  Scenario: Verify Product details using Datatable
     Given The user is on the homepage
     When The user clicks on a product "Blouse"
     Then The product details should be the following using
@@ -44,7 +44,7 @@ Feature: Validate product details
       | Blouse | New       | Cotton      | Casual      | 27.00   | S    |
 
 
-  Scenario Outline: Verify Product details using
+  Scenario Outline: Verify Product details using Scenario Outline
     Given The user is on the homepage
     When The user clicks on a product "<productName>"
     Then The product details should be the following using
@@ -59,3 +59,9 @@ Feature: Validate product details
       | Printed Dress               | New  | Cotton    | Girly  | 26.00 | S    |
       | Printed Summer Dress        | New  | Viscose   | Casual | 28.98 | S    |
       | Printed Chiffon Dress       | New  | Polyester | Girly  | 16.40 | S    |
+
+  @temp
+    Scenario: Verify Product details using external Excel file
+
+      Given The user is on the homepage
+      Then The product details should match the info in an excel file "testData.xlsx" and sheet "Sheet1"

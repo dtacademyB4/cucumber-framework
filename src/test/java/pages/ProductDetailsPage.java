@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.hc.client5.http.entity.EntityBuilder;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,6 +29,10 @@ public class ProductDetailsPage {
 
     @FindBy(id = "group_1")
     public WebElement size;
+
+
+    @FindBy(xpath = "//span[@itemprop='sku']")
+    public WebElement model;
 
 
     public String getFirstSelectedOption(){
