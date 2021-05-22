@@ -60,7 +60,7 @@ Feature: Validate product details
       | Printed Summer Dress        | New  | Viscose   | Casual | 28.98 | S    |
       | Printed Chiffon Dress       | New  | Polyester | Girly  | 16.40 | S    |
 
-  @temp
+
     Scenario: Verify Product details using external Excel file
 
       Given The user is on the homepage

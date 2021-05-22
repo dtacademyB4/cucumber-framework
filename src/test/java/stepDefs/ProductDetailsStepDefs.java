@@ -125,19 +125,23 @@ public class ProductDetailsStepDefs {
                     assertEquals(expectedComposition, actualComposition);
                     assertEquals(expectedStyle, actualStyle);
 
+                    // Write PASS to the excel file
                     excelUtils.setCellData("PASS", "Status", i + 1);
                 }catch(Throwable ex){
                     e = ex;
                     exceptionThrown = true;
                     e.printStackTrace();
+                    // Write FAIL to the excel file if an exception is thrown
                     excelUtils.setCellData("FAIL", "Status", i + 1);
 
                 }
-                // Write PASS or FAIL back to the excel file
+
 
 
                 Driver.getDriver().navigate().back();
             }else{
+                // If the Execute is equal to N:
+                // Write SKIP back to the excel file
                 excelUtils.setCellData("SKIP", "Status", i+1);
             }
 
@@ -148,8 +152,7 @@ public class ProductDetailsStepDefs {
 
 
 
-            // If the Execute is equal to N:
-            // Write SKIP back to the excel file
+
        if(exceptionThrown){   // Manual creation of softAssert
            throw  e;
        }

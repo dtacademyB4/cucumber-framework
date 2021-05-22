@@ -10,7 +10,7 @@ Feature: Verify User Creation
 
 
 
-
+@temp
   Scenario: Verify user registration using datatable
     Given The user is on the homepage
     When The user navigates to Login page
