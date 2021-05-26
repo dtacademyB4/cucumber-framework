@@ -82,6 +82,12 @@
             <version>5.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.25</version>
+        </dependency>
+
 
 
 
@@ -98,7 +104,7 @@
                     <useUnlimitedThreads>true</useUnlimitedThreads>
                     <includes>
                         <!-- name of your Runner class -->
-                        <include>**/*CukeRunnerParallel.java</include>
+                        <include>**/*CukeRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
