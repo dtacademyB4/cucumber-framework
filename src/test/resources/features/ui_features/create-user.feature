@@ -1,5 +1,6 @@
 Feature: Verify User Creation
 
+
   Scenario: Verify user registration
     Given The user is on the homepage
     When The user navigates to Login page
@@ -10,7 +11,7 @@ Feature: Verify User Creation
 
 
 
-@temp
+@smoke
   Scenario: Verify user registration using datatable
     Given The user is on the homepage
     When The user navigates to Login page

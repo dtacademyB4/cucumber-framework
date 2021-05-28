@@ -8,17 +8,17 @@ Background:
 
 
 
-  @smoke
+
   Scenario: Search for a product using search bar
     When The user enters a term "Blouse" to the search bar
     Then The search result should contain the term Blouse
 
-  @smoke
+
   Scenario: Search for a product using search bar
     When The user enters a term "Chiffon Dress" to the search bar
     Then The search result should contain the term Blouse
 
-  @smoke
+
   Scenario: Search for a product using invalid search term
     When The user enters a term "sdhgfgsjjsdfg" to the search bar
     Then The error message should be displayed.

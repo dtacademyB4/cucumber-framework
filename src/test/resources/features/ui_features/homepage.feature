@@ -1,5 +1,8 @@
-Feature: Verify Home page details
 
+
+@regression
+Feature: Verify Home page details
+@smoke
   Scenario: Verify product names
     Given The user is on the homepage
     Then The following products should be displayed
