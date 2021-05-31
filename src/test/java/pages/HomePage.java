@@ -21,6 +21,12 @@ public class HomePage {
     @FindBy(partialLinkText = "Sign in")
     public WebElement signInLink;
 
+ @FindBy(partialLinkText = "Sign in")
+    public WebElement signInLink1;
+
+@FindBy(partialLinkText = "Sign in")
+    public WebElement signInLink2;
+
 
 
 
