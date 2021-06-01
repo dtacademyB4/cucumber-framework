@@ -20,49 +20,6 @@ public class LoginPage {
     @FindBy(id = "SubmitCreate")
     public WebElement createAccountButton;
 
-   
-
-
-   
-
-
-
-
-
-
-    public Integer dsfcsddsfsdfsd;
-
-
-
-
-
-   
-    
-    
-    
-    
-    
-    
-        
-
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccouncdscdtButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountfdgfdgBcdsdutton4;
-
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscdtButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscdtdfsgdgsdButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscdtdewrwerfsgdgsdButton5;
-   
-
 
 
 
