@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class LoginPage {
 
 
@@ -18,11 +20,18 @@ public class LoginPage {
     @FindBy(id = "SubmitCreate")
     public WebElement createAccountButton;
 
-    @FindBy(id = "SubmitCreated")
-    public WebElement createAccountButtonNew;
+    @FindBy(xpath = "scabcasbksakjsaaaaaaaaaasjckbasjkb")
 
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButton3;
+    public List<String> sbjdfhjbshdbfhbsdbf;
+
+
+
+
+
+    public String dsfcsdfsd;
+
+
+
 
 
     @FindBy(id = "SubmitCreate")
