@@ -22,7 +22,9 @@ public class LoginPage {
 
     @FindBy(xpath = "scabcasbksakjsaaaaaaaaaasjckbasjkb")
 
-    public Integer sbjdfhjbshdbfhbsdbf;
+
+    public List<WebElement> sbjdfhjbshdbfhbsdbf;
+
 
 
 
