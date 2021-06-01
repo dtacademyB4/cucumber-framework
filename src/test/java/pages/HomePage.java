@@ -20,12 +20,18 @@ public class HomePage {
 
     @FindBy(partialLinkText = "Sign in")
     public WebElement signInLink;
+    
+    
+    
+    
+    
+    
+    
 
  @FindBy(partialLinkText = "Sign in")
     public WebElement signInLink1;
 
-@FindBy(partialLinkText = "Sign in")
-    public WebElement signInLink2;
+
 
 
 
@@ -46,7 +52,8 @@ public class HomePage {
     }
 
 
-
+ @FindBy(xpath = "//ul[@id='homefeatured']//a[@class='product-name']")
+    public List<WebElement> actualListOfWebelements2;
 
 
 
