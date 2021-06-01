@@ -20,54 +20,11 @@ public class LoginPage {
     @FindBy(id = "SubmitCreate")
     public WebElement createAccountButton;
 
-    @FindBy(xpath = "scabcasbksakjsaaaaaaaaaasjckbasjkb")
-
-
-    public List<WebElement> sbjdfhjbshdbfhbsdbf;
-
-
-
-
-
-
-    public String dsfcsdfsd;
-
-
-
-
-
     @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButton4;
+    public WebElement createAccountButton32;
 
 
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButton5;
 
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButtondvs3;
-
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountBcdsdutton4;
-
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccouncdscdtButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountfdgfdgBcdsdutton4;
-
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscdtButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscdtdfsgdgsdButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscdtdewrwerfsgdgsdButton5;
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscrewrrewdtdfsgdgsdButton5;
 
 
 

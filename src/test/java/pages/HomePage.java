@@ -21,11 +21,7 @@ public class HomePage {
     @FindBy(partialLinkText = "Sign in")
     public WebElement signInLink;
 
- @FindBy(partialLinkText = "Sign in")
-    public WebElement signInLink1;
 
-@FindBy(partialLinkText = "Sign in")
-    public WebElement signInLink2;
 
 
 
@@ -47,7 +43,8 @@ public class HomePage {
 
 
 
-
+    @FindBy(partialLinkText = "Sign in")
+    public WebElement signInfdggLink1;
 
 
     public void clickOnProduct(String product){
@@ -56,6 +53,13 @@ public class HomePage {
         Driver.getDriver().findElement(By.xpath(xpath)).click();
 
     }
+
+
+    @FindBy(partialLinkText = "Sign in")
+    public WebElement signInfdggLink1fdb;
+
+    @FindBy(partialLinkText = "Sign in")
+    public WebElement signgfdgInLink2;
 
 
 
