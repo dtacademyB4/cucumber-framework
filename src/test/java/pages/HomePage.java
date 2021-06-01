@@ -20,6 +20,13 @@ public class HomePage {
 
     @FindBy(partialLinkText = "Sign in")
     public WebElement signInLink;
+    
+    
+    
+    
+    
+    
+    
 
 
 
@@ -42,9 +49,6 @@ public class HomePage {
     }
 
 
-
-    @FindBy(partialLinkText = "Sign in")
-    public WebElement signInfdggLink1;
 
 
     public void clickOnProduct(String product){
