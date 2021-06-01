@@ -20,35 +20,30 @@ public class LoginPage {
     @FindBy(id = "SubmitCreate")
     public WebElement createAccountButton;
 
-    @FindBy(xpath = "scabcasbksakjsaaaaaaaaaasjckbasjkb")
+   
 
 
-    public List<WebElement> sbjdfhjbshdbfhbsdbf;
-
-
-
-
-
-
-    public String dsfcsdfsd;
+   
 
 
 
 
 
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButton4;
+
+    public Integer dsfcsddsfsdfsd;
 
 
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButton5;
-
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountButtondvs3;
 
 
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccountBcdsdutton4;
+
+   
+    
+    
+    
+    
+    
+    
+        
 
 
     @FindBy(id = "SubmitCreate")
@@ -66,8 +61,7 @@ public class LoginPage {
 
     @FindBy(id = "SubmitCreate")
     public WebElement createAccougfdgfncdscdtdewrwerfsgdgsdButton5;
-    @FindBy(id = "SubmitCreate")
-    public WebElement createAccougfdgfncdscrewrrewdtdfsgdgsdButton5;
+   
 
 
 
