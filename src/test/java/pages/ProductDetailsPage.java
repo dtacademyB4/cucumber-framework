@@ -29,6 +29,8 @@ public class ProductDetailsPage {
 
     @FindBy(id = "group_1")
     public WebElement size;
+    @FindBy(id = "group_1")
+    public WebElement size1;
 
 
     @FindBy(xpath = "//span[@itemprop='sku']")

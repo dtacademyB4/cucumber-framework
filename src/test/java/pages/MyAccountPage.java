@@ -17,6 +17,8 @@ public class MyAccountPage {
 
     @FindBy(partialLinkText = "Sign out")
     public WebElement signOutLink;
+    @FindBy(partialLinkText = "Sign out")
+    public WebElement signOutLink1;
 
 
 
