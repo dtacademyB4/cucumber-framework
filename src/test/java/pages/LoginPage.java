@@ -50,6 +50,11 @@ public class LoginPage {
     @FindBy(id = "SubmitCreate")
     public WebElement createAccougfdgfncdscdtButton5;
 
+    @FindBy(id = "SubmitCreate")
+    public WebElement createAccougfdgfncdscdtdfsgdgsdButton5;
+
+
+
 
 
 
