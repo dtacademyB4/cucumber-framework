@@ -57,13 +57,6 @@ public class SerializationDemo {
     }
 
 
-    @Test
-    public void receiveResponseAsMap(){
-
-
-
-
-    }
 
 
 
