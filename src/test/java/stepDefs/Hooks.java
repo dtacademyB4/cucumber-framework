@@ -14,7 +14,7 @@ public class Hooks {
 
     // Cucumber Hooks run before and after each SCENARIO
 
-    @Before
+    @Before ("@UI")
     public void setupScenario(){
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
@@ -34,7 +34,7 @@ public class Hooks {
     }
 
 
-    @After
+    @After ("@UI")
     public void tearDownScenario(Scenario scenario){
         if(scenario.isFailed()) {
             byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
